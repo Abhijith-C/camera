@@ -73,8 +73,6 @@ class _GalleryState extends State<Gallery> {
 }
 
 getitems(Directory directory) async {
-  Directory directory =
-      Directory.fromUri(Uri.parse('/data/user/0/com.example.camera'));
   final listDir = await directory.list().toList();
   database.value.clear();
   listDir.forEach((element) {
