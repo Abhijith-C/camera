@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:camera/zoom.dart';
 import 'package:flutter/material.dart';
+import 'package:gallery_saver/gallery_saver.dart';
 import 'package:image_picker/image_picker.dart';
 
 ValueNotifier<List> database = ValueNotifier([]);
@@ -42,6 +43,7 @@ class _GalleryState extends State<Gallery> {
             Directory directory = Directory.fromUri(
                 Uri.parse('/data/user/0/com.example.camera/'));
             getitems(directory);
+            GallerySaver.saveImage(imagepath.path);
           }
         },
         child: Icon(Icons.camera),
